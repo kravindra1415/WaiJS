@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div {
+            display: inline-block;
+        }
+
+        table {
+            display: block;
+        }
+
+        button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid rebeccapurple;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="myTable()">Show</button>
+    <table>
+        <th>Id</th>
+        <th>name</th>
+        <th>edu</th>
+
+        <tbody id="myTable"></tbody>
+    </table>
+
+    <script>
+        let employees = [
+            {
+                id: 1,
+                name: 'james',
+                edu: "MCA"
+            },
+            {
+                id: 2,
+                name: 'smith',
+                edu: "MCS"
+            },
+
+            {
+                id: 3,
+                name: 'king',
+                edu: "MS"
+            },
+        ]
+
+
+        function myTable() {
+            var table = document.getElementById('myTable')
+            for (var i = 0; i < employees.length; i++) {
+                var row = `<tr>
+                    <td>${employees[i].id}</td>
+                    <td>${employees[i].name}</td>
+                    <td>${employees[i].edu}</td>
+                    </tr>
+                    `;
+
+                table.innerHTML += row;
+            }
+        }
+    </script>
+</body>
+
+</html>

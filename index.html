@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div {
+            display: inline-block;
+        }
+
+        #table {
+            display: block;
+        }
+
+        button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid rebeccapurple;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="createTables()" id="button">Show</button>
+    <div id="table"></div>
+
+    <script>
+        const showTableButton = document.getElementById('button');
+        const myTable = document.getElementById('table');
+
+        let employees = [
+            {
+                id: 1,
+                name: 'james',
+                edu: "MCA"
+            },
+            {
+                id: 2,
+                name: 'smith',
+                edu: "MCS"
+            },
+
+            {
+                id: 3,
+                name: 'king',
+                edu: "MS"
+            },
+        ]
+        const headers = ['ID', 'Age', 'Country'];
+        // showTableButton.addEventListener('click', () => {
+
+        function createTables() {
+            //const createTable = document.createElement('table');
+
+            createTable = "<table>"
+            //const headerRow = document.createElement('tr');
+            createTable += "<tr>"
+
+            headers.forEach(headerText => {
+                //const header = document.createElement('th');
+
+                createTable += "<th>"
+                //const textNode = document.createTextNode(headerText);
+
+                createTable += "<td>"
+                //header.appendChild(textNode);
+
+                createTable += "</td>"
+
+                //createTable += "</th>"
+
+                //headerRow.appendChild(header);
+                createTable += "</th>"
+
+            });
+
+            //createTable.appendChild(headerRow);
+            createTable += "</tr>"
+
+            employees.forEach(emp => {
+                //let row = document.createElement('tr');
+                createTable += "<tr>";
+
+                Object.values(emp).forEach(text => {
+                    //const cell = document.createElement('td');
+                    createTable += "<td>"
+
+                    const textNode = document.createTextNode(text);
+                    //cell.appendChild(textNode);
+                    createTable += "</td>"
+
+                    //row.appendChild(cell);
+
+                });
+
+                //createTable.appendChild(row);
+                createTable += "</row>";
+            })
+
+            //myTable.appendChild(createTable);
+            document.getElementById('table').innerHTML = createTable;
+        }
+    </script>
+</body>
+
+</html>
