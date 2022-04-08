@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+    <link type="text/css" rel="stylesheet" href="../styles/09_Event_Bubbling_Solution.css">
+    <div class="d1" onclick="highlight(event,this)">1
+        <div class="d2" onclick="highlight(event,this)">2
+            <div class="d3" onclick="highlight(event,this)">3
+                <!-- Even if there is no event handler on innermost the event is handled by parent and then propogates to its paranet -->
+            </div>
+        </div>
+    </div>
+    <script>
+        function highlight(event, elem) {
+            //ToDO # 1
+            //Just change color of current div to yellow and again reset it to original.
+            //ToDO #2
+            // Stop event propagation after it reaches d2. change colour of d3 and d2
+        }
+    </script>
+</body>
+
+</html>

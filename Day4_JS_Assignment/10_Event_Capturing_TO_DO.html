@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+    <link type="text/css" rel="stylesheet" href="../styles/09_Event_Bubbling_Solution.css">
+    <div id="d1" class="d1">1
+        <div id="d2" class="d2">2
+            <div id="d3" class="d3">3
+                <!-- Even if there is no event handler on innermost the event is handled by parent and then propogates to its paranet -->
+            </div>
+        </div>
+    </div>
+    <script>
+        document.onload = addListeners();
+        function addListeners() {
+            //TODO get all divs by Ids and addEventListeners for capturing events and again for bubbling events.
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <pre>
+    <h2>Enter your Code for getting addition of 2 numbers : syntax : comma_seperated args=>{<your code}</h2>
+<textarea id='code' rows="10" cols="100" "></textarea>
+    <button onclick="checkAnswer()">CheckYourCode</button>
+    <strong>Correct</strong></strong><input type="checkbox" id="correct">
+    <strong>Wrong</strong><input type="checkbox" id="wrong">
+</pre>
+    <script>
+        function checkAnswer() {
+            var functionbody = document.getElementById('code');
+            functionbody.style.background = 'lightblue';
+            console.log(functionbody.value);
+            var argumentNames = functionbody.value.split("=>")[0];
+            var srcCode = functionbody.value.split("=>")[1];
+            console.log("DEBUG " + argumentNames);
+            var func = new Function(argumentNames, srcCode);
+            var result = func(10, 20);
+            console.log(result)
+            if (result == 30) {
+                functionbody.style.background = 'lightgreen';
+                document.getElementById('correct').checked = true;
+                document.getElementById('wrong').checked = false;
+            } else {
+                functionbody.style.background = 'mistyrose';
+                document.getElementById('wrong').checked = true;
+                document.getElementById('correct').checked = false;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="18_Functions_RTTI_TO_DO.js"></script>
+</head>
+
+<body>
+    <div class="showList">
+        <form action="#" id="form1">
+            <input list="fnlist" id="func" onchange="printValue()" />
+            <datalist id="fnlist"></datalist>
+            <input type="submit">
+        </form>
+
+    </div>
+    <div id="fnDetails"></div>
+    <script>
+        var myArr = [10, 20, 30, 40, 50];
+        window.onload = showOptions;
+        function showOptions() {
+            //TODO#
+            // 1. Build html String <option value='functionName'</option> for all
+            // functions in the array "validArrayFunctions" defined in 18_Functions_RTTI_TO_DO.js
+            // file
+            //2. add this html string as inner HTML to "fnList"
+
+
+
+
+        }
+        function printValue() {
+            //TODO get the value entereed/selected by user (i.e. the function name from datalist
+            //TODO get no of args expected by the function from funNameObjMap defined in
+            // 18_Functions_RTTI_TO_DO.js file . display the number of args the function takes
+            //TODO show input text field for user to enter arg values to be passed to the selected function.
+            //TODO show button to call the function on the array myArr(declared in the file.
+            //TODO display the resultant array
+            //TODO Throw Error if no of args are less than expected args
+            //TODO Throw error if input field is left blank
+            //TODO Display error
+        }
+
+
+    </script>
+</body>
+
+</html>

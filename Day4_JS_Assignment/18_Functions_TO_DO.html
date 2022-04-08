@@ -1,0 +1,51 @@
+//Write a function which takes two params
+// 1. array
+//2. name of function to be performed,
+//3. array or args to be passed to the function in param#2 above
+// performs the operation and returns the resultant array
+
+var arr=new Array(1,2,3,4,5,6,7);
+var validArrayFunctions = ["toString",
+"toLocaleString",
+"join",
+"pop",
+"push",
+"concat",
+"reverse",
+"shift",
+"unshift",
+"slice",
+"splice",
+"sort",
+"indexOf",
+"lastIndexOf"];
+
+var funNameObjMap={};
+var propDescriptor;
+var propName;
+for(index in validArrayFunctions){
+propName = validArrayFunctions[index];
+functionObj= Object.getOwnPropertyDescriptor(Array.prototype,propName).value;
+funNameObjMap[propName] =functionObj;
+}
+console.log(funNameObjMap);
+
+/*
+var props = Object.getOwnPropertyDescriptor(Array.prototype,"keys");
+var propNamesArray = Object.getOwnPropertyNames(Array.prototype);
+for( var property in propNamesArray){
+var propName = propNamesArray[property];
+var propertyVDescValue = (Object.getOwnPropertyDescriptor(Array.prototype,propName)).value;
+var invalidPropNames =
+["filter","forEach","some","constructor","every","map","reduce","reduceRight","find","findIndex","entries","keys","copywithin"];
+// console.log("filer".indexOf(invalidPropNames.toString()) !=-1)
+if(typeof propertyVDescValue=="function" && (invalidPropNames.toString()).indexOf(propName) ==-1){
+console.log(propName + "no of args expected" );
+console.log(propertyVDescValue.length);
+}
+}
+*/
+<!DOCTYPE html>
+<html>
+
+</html>
