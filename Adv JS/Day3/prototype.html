@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function toString(role, exp) {
+            this.role = role;
+            this.exp = exp;
+        }
+
+        function Employee(id, salary, dept) {
+            this.id = id;
+            this.salary = salary;
+            this.dept = dept;
+            this.getId = function () {
+                return this.id;
+            }
+
+            this.getSalary = function () {
+                return this.salary;
+            }
+
+            this.toString = function () {
+                return this.id + "," + this.salary + "," + this.dept;
+            }
+        }
+
+        var employee = new Employee(1, 10000, "IT");
+
+        function Manager(role, exp) {
+            this.role = role;
+            this.exp = exp;
+        }
+        //to make manager as subclass of Employee use prototype
+
+        Manager.prototype = employee;//Manager extends Employee
+        var manager1 = new Manager("DevopsManager", 5)
+        var manager2 = new Manager("HR", 7)
+
+        console.log(manager1.role);
+        console.log(manager1.id);
+        console.log(manager1.id = 200)
+        console.log(manager1.salary);
+        console.log(manager1.dept);
+        console.log(employee.toString())
+        console.log(manager2.toString());
+
+
+    </script>
+</body>
+
+</html>

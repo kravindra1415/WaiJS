@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Name(s) of the Browser??</h1>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
+                alert('Opera');
+            }
+
+            else if (navigator.userAgent.indexOf('Chrome') != -1) {
+                alert('chrome');
+            }
+
+            else if (navigator.userAgent.indexOf('Safari') != -1) {
+                alert('Safari');
+            }
+        }
+    </script>
+</body>
+
+</html>

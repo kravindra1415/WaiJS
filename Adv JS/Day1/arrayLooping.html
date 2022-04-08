@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+
+    <script>
+        const fruits = ["Apple", "Banana", "Orange", "Mango"];
+        let fLength = fruits.length;
+
+        let text = "<ul>";
+        for (let index = 0; index < fruits.length; index++) {
+            text += "<li>" + fruits[index] + "</li>"
+        }
+        text += "</ui>";
+
+        document.getElementById('demo').innerHTML = text;
+    </script>
+</body>
+
+</html>

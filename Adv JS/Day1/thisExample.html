@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 onclick="myfn(this)">Hello World</h1> <!-- this here is 1 -->
+    <h2 id="2">hello All!!</h2>
+
+    <script>
+        var h2Element = document.getElementById('2');
+        h2Element.addEventListener('click', function () {
+            console.log("h2 clicked");  //h2 clicked
+            console.log(this);  //<h2 id="2">hello All!!</h2>
+        })
+        function myfn(obj) {
+            console.log(this);  //Window
+            console.log(obj.innerText);  //Hello World
+        }
+    </script>
+</body>
+
+</html>
