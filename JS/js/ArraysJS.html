@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //Array literels
+        var student = ["sachin", "suraj", "kartik", "rudra"]
+
+        student.forEach(element => {
+            document.writeln(element);
+
+        });
+        document.writeln("<br/>");
+        //using new keyword..
+        var emp = new Array();
+        emp[0] = "one";
+        emp[1] = "two";
+        emp[2] = "three";
+
+        for (var e = 0; e < emp.length; e++) {
+            document.writeln(emp[e]);
+        }
+        document.writeln("<br/>");
+
+        //aaray constructors
+
+        var webseries = new Array("A", "B", "C", "D");
+        for (var i = 0; i < webseries.length; i++) {
+            document.writeln(webseries[i] + "<br/>");
+        }
+    </script>
+</body>
+
+</html>

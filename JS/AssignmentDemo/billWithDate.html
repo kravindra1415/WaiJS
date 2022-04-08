@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .do_margin {
+            margin-left: 2%;
+        }
+
+        .do_boder {
+            border: 1px red solid;
+            width: 20%;
+            padding: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-left: 20%;margin-top: 5%;" class="do_boder">
+        Patient Name:&nbsp;<input class="do_margin" type="text" name="name" id="name"><br /><br />
+        Regsiter Date:<input type="date" name="" id="regDate"><br /><br />
+        <label for="room">Room Details:</label>
+
+        <select class="do_margin" name="room" id="room">
+            <option value="500">Single Bed</option>
+            <option value="1000">General Bed</option>
+            <option value="1200">Delux</option>
+            <option value="1500">Super Delux</option>
+        </select>&nbsp;&nbsp;<br /><br />
+
+        <!-- <br /><br />days:&nbsp;<input style="margin-left:62px;" type="text" name="days" id="days"><br /><br /> -->
+
+        Released Date:<input type="date" name="" id="relDate"><br /><br />
+        <input type="button" value="Calculate" onclick="calculateBillWithDate()"><br /><br />
+        Total Amount:<input class="do_margin" type="text" name="price" id="price"><br /><br />
+    </div>
+
+    <script>
+        function calculateBillWithDate() {
+            var regDate = new Date(document.getElementById('regDate').value);
+            var relDate = new Date(document.getElementById('relDate').value);
+            var roomType = parseInt(document.getElementById('room').value);
+
+            var finalDate = Math.abs(regDate - relDate);
+            console.log(finalDate)
+
+            document.getElementById('price').value = roomType * (finalDate / (1000 * 60 * 60 * 24));
+        }
+    </script>
+</body>
+
+</html>

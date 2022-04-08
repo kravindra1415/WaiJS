@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = "javascript";
+        var str1 = new String("CSS");
+
+        document.writeln(str + str1 + "<br/>");
+        document.writeln(str.slice(2, 5) + "<br/>");//vas
+        document.writeln(str.valueOf() + "<br/>");// javascript
+        document.writeln(str.toString() + "<br/>");//javascript
+        document.writeln(str.search("script" + "<br/>"));//4
+        document.writeln(str.substring(0, 4) + "<br/>");
+
+
+        //date object
+        var date = new Date();
+        document.writeln("DATE :" + date.getDate() + "<br/>");
+
+        var dd = new Date("Aug 11,2014 20:22:10");
+        document.write(dd + "<br/>");
+
+        document.writeln("DAY :" + date.getDay() + "<br/>");//5
+        document.writeln("HOURS :" + date.getHours() + "<br/>");//14
+        document.writeln("YEAR :" + date.getFullYear() + "<br/>");//2022
+        document.writeln("MONTH :" + date.getMonth() + "<br/>");//2
+
+
+        //math obj
+        //seil(): it takes the largest value to the closest integer.
+        document.write(Math.abs(-4) + "<br/>");//4
+        document.write(Math.ceil(7.5) + "<br/>");//8
+        document.write(Math.ceil(3.2) + "<br/>");//4
+
+        //floor(): it takes the smallest value to the closest integer.
+        document.write(Math.floor(5.4) + "<br/>");//5
+
+        //document.write(Math.random());//random values from 0.1
+
+        document.write(Math.max(12, 32) + "<br/>");//32
+        document.writeln(Math.trunc(0.5326) + "<br/>");//0
+        document.writeln(Math.trunc(4.546) + "<br/>");//4
+
+        //number obj
+        var x = 23;
+        var y = 90;
+
+        document.writeln(Number.isFinite(x) + "<br/>");//true
+        document.writeln(Number.isFinite(x / y) + "<br/>");//true
+        document.writeln(Number.isInteger(89.56) + "<br/>");//false
+        document.writeln(Number.parseFloat(89.56) + "<br/>");//false
+        document.writeln(Number.parseInt(89.56) + "<br/>");//false
+
+
+        var z = "welcome";
+        document.writeln(Number.parseInt(z) + "<br/>");//NaN
+
+        var x1 = "50.56 string";
+        document.writeln(Number.parseInt(x1) + "<br/>");//50
+
+        var a = 67.8971;
+        document.writeln(a.toFixed(2) + "<br/>");//67.89
+        document.writeln(a.toString() + "<br/>");//67.8971
+        document.writeln(x.toString() + "<br/>");//23
+        document.writeln(a + x);//90.8971
+
+        //boolean
+        document.writeln(10 > 23 + "<br/>");
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #sc {
+            border: 1px solid black;
+            width: 250px;
+            height: 100px;
+            overflow: scroll;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p id="sc" onscroll="ChangeColor()">In my younger and more vulnerable years my father gave me some advice that I've
+        been
+        turning over in my mind ever since.In my younger and more vulnerable years my father gave me some advice that
+        I've
+        been
+        turning over in my mind ever since.
+    </p>
+
+    <script>
+        function ChangeColor() {
+            document.getElementById('sc').style.backgroundColor = "red";
+            document.getElementById('sc').style.color = "blue";
+        }
+    </script>
+</body>
+
+</html>

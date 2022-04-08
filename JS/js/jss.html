@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="displayData"></div>
+    <button onclick="ShowInfo()">ShowData</button>
+    <button onclick="ShowInfo('sortDate')">Sort By Date</button>
+    <button onclick="ShowInfo('byamount')">SortByAmount</button>
+
+    <script>
+        var order1 = { ID: 1, OrderDate: new Date('07-15-2016'), details: 'laptops', qty: 5, Amount: 100000, make: "Apple", country: "Bharat" };
+        var order2 = { ID: 2, OrderDate: new Date('07-16-2016'), details: 'PC', qty: 6, Amount: 600000, make: "Sony", country: "Japan" };
+        var order3 = { ID: 3, OrderDate: new Date('07-17-2016'), details: 'Shorts', qty: 10, Amount: 200000, make: "Samsung", country: "Bharat" };
+        var order4 = { ID: 4, OrderDate: new Date('07-18-2016'), details: 'Chairs', qty: 23, Amount: 50000, make: "Puma", country: "Norway" };
+        var order5 = { ID: 5, OrderDate: new Date('07-19-2016'), details: 'laptops', qty: 5, Amount: 1000, make: "Apple", country: "US" };
+        var order6 = { ID: 6, OrderDate: new Date('07-11-2016'), details: 'Shirt', qty: 7, Amount: 100000, make: "Nike", country: "UK" };
+        function getArray() {
+            return [order1, order2, order3, order4, order5, order6];
+        }
+        var arr = getArray();
+
+        function ShowInfo() {
+            showTable = "<table with='50%' border='2'>";
+            for (i = 0; i < arr.length; i++) {
+                if (i == 0) {
+                    for (var a in arr[i]) {
+                        showTable += "<th>" + a + "</th>";
+                    }
+                }
+                showTable += "<tr>";
+                for (var a in arr[i]) {
+                    showTable += "<td>" + arr[i][a] + "</td>";
+                }
+                showTable += "</tr>";
+            }
+
+            if (sort = "sortDate") {
+                arr.sort(function (num1, num2) {
+                    return new Date(num2.OrderDate) - new Date(num1.OrderDate);
+                });
+
+            }
+
+            if (sort == "sortAmount") {
+                arr.sort(function (a, b) {
+                    return (a.Amount) - (b.Amount);
+                });
+                arr = arr.reverse();
+            }
+
+            showTable += "</table>";
+            document.getElementById('displayData').innerHTML = showTable;
+        }
+
+    </script>
+</body>
+
+</html>

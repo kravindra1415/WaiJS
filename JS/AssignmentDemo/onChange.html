@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function favTutorial() {
+            var mylist = document.getElementById('myList');
+            document.getElementById('fav').value = mylist.options[mylist.selectedIndex].text;
+        }
+    </script>
+
+    <form action="">
+        <select name="" id="myList" onclick="favTutorial()">
+            <option value="">Choose tutorial..</option>
+            <option value="">Java</option>
+            <option value="">JDBC</option>
+            <option value="">MVC</option>
+            <option value="">SPRING</option>
+        </select>
+        <p>your selected topic is: </p>
+        <input type="text" name="" id="fav" size="30">
+    </form>
+</body>
+
+</html>

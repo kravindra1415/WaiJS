@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class A {
+            display() {
+                document.writeln("WITHIN CLASS A" + "<br/>");
+            }
+        }
+
+        class B extends A {
+            display() {
+                super.display();
+                document.writeln("WITHIN CLASS B" + "<br/>");
+            }
+        }
+
+        function triangle(base, height) {
+            this.base = base;
+            this.height = height;
+        }
+
+        triangle.prototype.area = function () {
+            return this.base * this.height;
+        }
+
+        var t1 = new triangle(34, 89);
+        var t2 = new triangle(65, 40);
+
+        document.writeln(t1.area() + "</br>")
+        document.writeln(t2.area() + "</br>")
+
+        a = new A();
+        b = new B();
+        b.display();
+    </script>
+</body>
+
+</html>

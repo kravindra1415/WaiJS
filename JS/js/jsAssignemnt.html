@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+
+    <div id="showTable"></div>
+    <button onclick="displayData()" value="Show">Show</button>
+    <!-- <table border="1" cellpadding="4" id="tbl">
+        <tr>
+            <th>id</th>
+            <th>orderDate</th>
+            <th>details</th>
+            <th>qty</th>
+            <th>amount</th>
+            <th>make</th>
+            <th>Bharat</th>
+        </tr>
+        <td>1</td>
+        <td>07-15-2016</td>
+        <td>laptops</td>
+        <td>5</td>
+        <td>10000</td>
+        <td>Apple</td>
+        <td>Bharat</td>
+    </table> -->
+
+    <script>
+        var order1 = { id: 1, orderDate: new Date('07-15-2016'), details: 'laptops', qty: 5, amount: 100000, make: "Apple", country: "Bharat" };
+        var order2 = { id: 2, orderDate: new Date('07-16-2016'), details: 'PC', qty: 6, amount: 600000, make: "Apple", country: "Bharat" };
+        var order3 = { id: 3, orderDate: new Date('07-17-2016'), details: 'Shorts', qty: 10, amount: 200000, make: "Apple", country: "Bharat" };
+        var order4 = { id: 4, orderDate: new Date('07-18-2016'), details: 'Chairs', qty: 23, amount: 50000, make: "Apple", country: "Bharat" };
+        var order5 = { id: 5, orderDate: new Date('07-19-2016'), details: 'laptops', qty: 5, amount: 1000, make: "Apple", country: "Bharat" };
+        var order6 = { id: 6, orderDate: new Date('07-11-2016'), details: 'Shirt', qty: 7, amount: 100000, make: "Apple", country: "Bharat" };
+
+        function getArray() {
+            return [order1, order2, order3, order4, order5, order6];
+        }
+
+        function displayData() {
+
+            var arr = getArray();
+            // document.writeln(arr.length);
+
+            const element = document.getElementById('showTable');
+            const tables = document.createElement('table')
+            tables.border = 2
+
+            for (var i = 1; i < arr.length; i++) {
+
+                const row = document.createElement('tr')
+
+                var td1 = document.createElement('td');
+                var td2 = document.createElement('td');
+                var td3 = document.createElement('td');
+                var td4 = document.createElement('td');
+                var td5 = document.createElement('td');
+                var td6 = document.createElement('td');
+
+                var textId = document.createTextNode(order1.id);
+                var textOrderDate = document.createTextNode(order1.orderDate);
+                var textDetails = document.createTextNode(order1.details);
+                var textQty = document.createTextNode(order1.qty);
+                var textAmount = document.createTextNode(order1.amount);
+                var textMake = document.createTextNode(order1.make);
+
+                td1.appendChild(textId);
+                td2.appendChild(textOrderDate);
+                td3.appendChild(textDetails);
+                td4.appendChild(textQty);
+                td5.appendChild(textAmount);
+                td6.appendChild(textMake)
+
+                row.appendChild(td1);
+                row.appendChild(td2);
+                row.appendChild(td3);
+                row.appendChild(td4);
+                row.appendChild(td5);
+                row.appendChild(td6);
+
+                tables.appendChild(row);
+                element.appendChild(tables);
+            }
+        }
+    </script>
+</body>
+
+</html>

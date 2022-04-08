@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" name="myForm">
+        <input type="password" name="userPassword" onclick="validate()">
+        strength:<span id="myLocation">NO strength</span>
+
+        <input type="button" value="Check" onclick="validate()">
+    </form>
+    <script>
+        function validate() {
+            var msg;
+            if (document.myForm.userPassword.value.length > 5) {
+                msg = "Good";
+            }
+            else {
+                msg = "Poor";
+            }
+            document.getElementById('myLocation').innerText = msg;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="Alert" onclick="msg()">
+    <input type="button" value="Confirm" onclick="confirmMsg()">
+    <input type="button" value="Prompt" onclick="promptBox()">
+    <input type="button" value="OpenButton" onclick="openFacebook()">
+    <input type="button" value="TimeOut" onclick="timeOut()">
+
+    <!-- history object -->
+    <button onclick="history.back()">Go Back</button>
+    <button onclick="history.forward()">Go Forward</button>//history.go(-2)
+
+    <script>
+        function msg() {
+            alert('Welcome');
+        }
+
+        function confirmMsg() {
+            var v = confirm('are you want close??')
+            var result = v ? alert('ok') : alert('Cancel');
+        }
+
+        function promptBox() {
+            var s = prompt("Who r u??")
+            alert('Hello!! Im ' + s);
+        }
+
+        function openFacebook() {
+            open("https://www.programiz.com/javascript/online-compiler/");
+        }
+
+        function timeOut() {
+            setTimeout(
+                function () {
+                    alert('delaying.....');
+                }, 2000)
+        }
+
+        // navigator object
+        document.writeln("</br>" + navigator.appCodeName);
+        document.writeln("</br>" + navigator.appName);
+        document.writeln("</br>" + navigator.appVersion);
+        document.writeln("</br>" + navigator.cookieEnabled);
+        document.writeln("</br>" + navigator.language);
+        document.writeln("</br>" + navigator.platform + "<br/>");
+
+        //screen object
+        document.writeln("Screen object: " + "<br/>");
+        document.writeln("Screen Height: " + screen.height + "<br/>");
+        document.writeln("screen available height: " + screen.availHeight + "<br/>");
+        document.writeln("orientation: " + screen.orientation + "<br/>");
+        document.writeln("Depth: " + screen.pixelDepth + "<br/>");
+        document.writeln("width: " + screen.width + "<br/>");
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function verifyAnswer() {
+            //disable all the radio
+            document.getElementById('csharp').disabled = true;
+            document.getElementById('java').disabled = true;
+            document.getElementById('angular').disabled = true;
+            //get the value if checkbox is checked
+            var dev = document.getElementById('myCheck').checked;
+            if (dev == true) {
+                //enable all radio buttons
+                document.getElementById('csharp').disabled = false;
+                document.getElementById('java').disabled = false;
+                document.getElementById('angular').disabled = false;
+            }
+        }
+    </script>
+    <form action="">
+        <h3>Are you a developer??</h3>
+        YES:
+        <input type="checkbox" name="" id="myCheck" onchange="verifyAnswer()" checked>
+    </form>
+    <p><b>if yes, choose language</b></p>
+    <!-- buttons -->
+    <label><input type="radio" name="pro" id="csharp" value="csharp">C#</label>
+    <label><input type="radio" name="pro" id="java" value="java">Java</label>
+    <label><input type="radio" name="pro" id="angular" value="angular">Angular</label>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<form action="innerHtml.html" name="formValidation" method="get" onsubmit="return(validateForm())">
+    Enter Name:<input type="text" name="name" id=""><br />
+    Password:<input type="password" name="password"><br />
+    zipcode:<input type="text" name="zipcode"><br />
+
+    <label for="country">Choose a country:</label>
+
+    <select name="country" id="country">
+        <option value="India">India</option>
+        <option value="US">US</option>
+        <option value="UK">Uk</option>
+    </select><br />
+
+    rePassword:<input type="password" name="rePassword"><br />
+
+    <input type="submit" value="Register">
+</form>
+
+<body>
+    <script>
+        function validateForm() {
+            var name = document.formValidation.name.value;
+            var password = document.formValidation.password.value;
+            var zipcode = document.formValidation.zipcode.value;
+            var country = document.formValidation.country.value;
+            var rePassword = document.formValidation.rePassword.value;
+
+            if (name == null || name == "") {
+                alert('Name cant blank')
+                document.formValidation.name.focus()
+                return false;
+            }
+
+            else if (password == null || password.length < 5) {
+                alert('write atleast 6 characters..')
+                document.formValidation.password.focus()
+                return false;
+            }
+
+            else if (zipcode == null || zipcode.length < 5) {
+                alert('zipcode can not empty')
+                document.formValidation.zipcode.focus()
+                return false;
+            }
+
+            else if (rePassword == null || rePassword == "") {
+                alert('please filled the repassword')
+                document.formValidation.country.focus()
+                return false;
+            }
+
+            else if (password != rePassword) {
+                alert('password doesnt match');
+                document.formValidation.rePassword.focus()
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

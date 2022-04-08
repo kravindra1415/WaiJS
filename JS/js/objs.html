@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var x = 20;
+        document.writeln(x);
+
+        document.writeln();
+
+        function f1() {
+            for (var i = 3; i <= 8; i++) {
+                document.writeln(i);
+                document.writeln("<br/>");
+            }
+        }
+        f1();
+
+        //objects by literals
+        emp = { id: 1, name: "Reeba", salary: 2000 }
+        document.writeln(emp.id + "" + emp.name + "" + emp.salary);
+        document.writeln("<br/>");
+
+        //new keyword
+        var emp = new Object();
+        emp.id = 103;
+        emp.name = "kartik";
+        emp.salary = 1000;
+        document.writeln(emp.id + "" + emp.name + "" + emp.salary);
+        document.writeln("<br/>");
+
+        //obj constructors
+        function emps(id, name, salary) {
+            this.id = id;
+            this.name = name;
+            this.salary = salary;
+
+            this.changesalary = changesalary;
+
+            function changesalary(salary1) {
+                this.salary = salary1;
+            }
+        }
+
+        e1 = new emps(1, "suraj", 1234);
+        document.writeln(e1.id + "" + e1.name + "" + e1.salary);
+        document.writeln("<br/>");
+
+        e1.changesalary(200000);
+        document.writeln(e1.id + "" + e1.name + "" + e1.salary);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .do_margin {
+            margin-left: 2%;
+        }
+
+        .do_boder {
+            border: 1px red solid;
+            width: 20%;
+            padding: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-left: 20%;margin-top: 5%;" class="do_boder">
+
+        Patient Name:&nbsp;<input class="do_margin" type="text" name="name" id="name"><br /><br />
+
+        <label for="room">Room Details:</label>
+
+        <select class="do_margin" name="room" id="room" onclick="Calculate(value)">
+            <option value="500">Single Bed</option>
+            <option value="1000">General Bed</option>
+            <option value="1200">Delux</option>
+            <option value="1500">Super Delux</option>
+        </select>&nbsp;&nbsp;
+
+        <br /><br />days:&nbsp;<input style="margin-left:62px;" type="text" name="days" id="days"><br /><br />
+        Total Amount:<input class="do_margin" type="text" name="price" id="price">
+    </div>
+
+    <script>
+        function Calculate(value) {
+            var v = value;
+            var days = document.getElementById("days").value;
+            var total = days * v;
+            document.getElementById("price").innerHTML = total;
+            document.getElementById("price").value = total;
+        }
+    </script>
+</body>
+
+</html>

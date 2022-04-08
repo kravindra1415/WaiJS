@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 50%;
+            width: 70%;
+            animation-name: example;
+            animation-duration: 4s;
+
+        }
+
+        @keyframes example {
+            from {
+                background-color: red;
+            }
+
+            to {
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+
+<body onload="myFunction()">
+    <div id="load">
+    </div>
+
+    <script>
+        // function load() {
+        //     document.getElementById('load').style.backgroundColor = "blue";
+        // }
+
+        // function myFunction() {
+        //     // alert("Page is loaded");
+        //     //document.getElementById('load').style.backgroundColor = "blue";
+        //     document.body.style.backgroundColor = "blue";
+
+        // }
+
+        function myFunction() {
+
+            red = Math.ceil(Math.random() * 264);
+
+            green = Math.ceil(Math.random() * 264);
+
+            blue = Math.ceil(Math.random() * 264);
+
+            str = "rgb(" + red + "," + green + "," + blue + ")";
+
+            document.body.style.backgroundColor = str;
+
+        }
+
+    </script>
+</body>
+
+</html>

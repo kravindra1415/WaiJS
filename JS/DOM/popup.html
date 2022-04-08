@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Form</title>
+</head>
+
+<body onload="load()">
+    <form action="" name="myForm">
+        <input type="button" value="Click" onclick="nextPage()"><br /><br />
+        <div id="myLocation"></div>
+        <!-- <p1 id="load"></p1> -->
+    </form>
+
+    <script>
+        function nextPage() {
+            var data = "Email <input type='email' name='email'  <br/><br/><br/> Password <input type='password' name='password' <br/><br/><br/><input type='submit' value='Login'>&nbsp;&nbsp;<input type='submit' onclick='history.back();' value='Close'>"
+            document.getElementById('myLocation').innerHTML = data;
+        }
+
+        // document.getElementById("load").onload = function () { load() };
+
+        // function load() {
+        //     document.getElementById('load').style.color = "blue";
+        // }
+    </script>
+</body>
+
+</html>
