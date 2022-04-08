@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <form id="form1" action="#">
+        <form action="">
+            First name:<br>
+            <input type="text" name="firstname" value="Vivek" readonly>
+            <input type="text" name="nickName" value="Vivek" disabled>
+            <br>
+            Last name:<br>
+            <input type="text" name="lastname" size="40" maxlength="5">
+            Pin <input id="pin" type="number" name="pin1" type="number">
+            <p id="error"></p>
+            <button onclick="validate()">CheckPin</button>
+            <input type="submit">
+            <input id="1" type="submit" formaction="http://www.cnn.com" formmethod="post">
+        </form>
+    </form>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
